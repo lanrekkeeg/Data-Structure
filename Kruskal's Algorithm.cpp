@@ -1,8 +1,8 @@
 /*
 *
 *
-* kruskal Algorithm implementation
-* Author: Faisal kahn
+* kruskal's Algorithm implementation
+* Author: Faisal khan
 *
 */
 #include<iostream>
