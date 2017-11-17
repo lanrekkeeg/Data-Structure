@@ -70,15 +70,14 @@ public:
 		height_ = left_height - right_height;
 		if (height_ <= -2){
 			if (temp->data<value&&temp->right->data<value){
-				 zag_zag(temp);
+				zag_zag(temp);
 			}
-			else
-				zag_zig(temp);
+			else	zag_zig(temp);
 		}
 		else if (height_ >= 2){
 			if (temp->data>value&&temp->left->data>value)
 				 zig_zig(temp);
-			else  zig_zag(temp);
+			else 	 zig_zag(temp);
 		}
 	}
 	void zag_zag(node*& temp) {
@@ -89,7 +88,7 @@ public:
 		temp->left->right = temp_1;
 	}
 	void zig_zig(node *&temp) {
-		cout<<"Zig Zig is called "<<endl;
+		
 		node *temp_1 = 	temp->left->right;
 		temp->left->right = temp;
 		temp = 	temp->left;
@@ -98,16 +97,15 @@ public:
 
 	}
 	void zag_zig(node *&temp) {
-		cout<<"Zag zig is called "<<endl;
+		
 		node* temp1 = temp->right;
 		temp->right = temp1->left;
 		temp1->left = temp1->left->right;
 		temp->right->right = temp1;
 		zag_zag(temp);
 	}
-	node* zig_zag(node *&temp) {
-
-	cout<<"Zig Zag is called "<<endl;
+	void zig_zag(node *&temp) {
+		
 		node* temp_1 = temp->left;
 		temp->left = temp_1->right;
 		temp_1->right = temp->left->left;
@@ -115,6 +113,7 @@ public:
 		zig_zig(temp);
 	}
 	void print(node *temp){
+		
 		if (temp == NULL){
 			return;
 		}
