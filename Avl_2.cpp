@@ -2,7 +2,7 @@
 using namespace std;
 struct node {
 	int data;
-	node* left;
+	node *left;
 	node *right;
 };
 
@@ -80,7 +80,7 @@ public:
 			else 	 zig_zag(temp);
 		}
 	}
-	void zag_zag(node*& temp) {
+	void zag_zag(node *&temp) {
 		
 		node *temp_1 = 	temp->right->left;
 		temp->right->left = temp;
@@ -166,11 +166,9 @@ int main(){
 	system("CLS");
 	B_1.cal(B_1.root->left);
 	cout<<"Height of Left Sub tree is "<<B_1.Return_height()<<endl;
-	B_1.init_height();
+	B_1.init_height(); // to clear the _height_ 
 	B_1.cal(B_1.root->right);
 	cout<<"Height of Right Sub tree is "<<B_1.Return_height()<<endl;
-	
-	cout << endl;
 	B_1.print(B_1.root);
 	cout << endl;
 }
